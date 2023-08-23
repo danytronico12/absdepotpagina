@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->longText('avatar');
+            $table->integer('noti')->nullable();
             $table->boolean('active')->default(false);
             $table->string('admin')->default('noadmin')->nullable();
             $table->rememberToken();

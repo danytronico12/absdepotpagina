@@ -33,7 +33,7 @@ import footerF from "@/Components/footerF.vue";
 
 <template>
     <navhead></navhead>
-    <section class="h-screen">
+    <section >
         <div class="h-full">
             <!-- Left column container with background-->
             <div

@@ -3,7 +3,7 @@
     <div class="p-12"> <div
         class="flex  flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 w-full md:flex-row">
         <img
-            class="h-96 w-1/2 rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
+            class="h-96 md:w-1/2 w-full rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
             src="/storage/image/pexel4.jpg"
             alt="" />
         <div class="flex w-full  flex-col justify-start p-6">
@@ -104,14 +104,16 @@
 <script setup>
 import Navhead from "@/Components/navhead.vue";
 import footerF from "@/Components/footerF.vue";
+import InputError from '@/Components/InputError.vue';
+import {onMounted, ref} from "vue";
+import {useForm} from "@inertiajs/vue3";
 // Initialization for ES Users
 import {
     Ripple,
     Input,
     initTE,
 } from "tw-elements";
-import {onMounted, ref} from "vue";
-import {useForm} from "@inertiajs/vue3";
+
 onMounted(() =>{
     initTE({ Input,Ripple });
 })

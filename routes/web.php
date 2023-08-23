@@ -38,6 +38,10 @@ Route::get('/nosotros', function () {
 
     return Inertia::render('nosotros');
 });
+Route::get('/ddi', function () {
+
+    return Inertia::render('ddi');
+});
 Route::get('/servicios', function () {
 
     return Inertia::render('servicios');
