@@ -14,9 +14,9 @@ class contactddiController extends Controller
 {
     public function index()
     {
-        $posts = contactanos::orderBy('id', 'desc')
+        $posts = contacteno::orderBy('id', 'desc')
             ->paginate(10);
-        return inertia('Auth/contacto',compact('posts'));
+        return inertia('Auth/contacto', compact('posts'));
     }
     public function index4444()
     {
@@ -24,6 +24,13 @@ class contactddiController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'telefono' => 'required|string|max:255',
+            'comentario' => 'required|string|max:255',
+        ]);
+
         $user = contacteno::create([
             'nombre' => $request->nombre,
             'email' => $request->email,
@@ -31,7 +38,9 @@ class contactddiController extends Controller
             'comentario' => $request->comentario,
         ]);
 
-        $this->notifications(Auth()->user()->id);
+        Mail::to("kratoritoszzz@gmail.com")->send(new \App\Mail\YouMail3($user));
+
+        $this->notifications($user->id);
 
         return inertia('Dashboard');
     }
@@ -39,7 +48,7 @@ class contactddiController extends Controller
     {
         $request->validate([
             'nombre' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:'.User::class,
+            'email' => 'required|string|email|max:255|unique:' . User::class,
             'telefono' => 'required|string|max:255',
             'instagram' => 'required|string|max:255',
             'edad' => 'required|string|max:255',
@@ -61,18 +70,19 @@ class contactddiController extends Controller
             'edad' => $request->edad,
             'razon' => $request->razon,
         ];
-        $this->notifications(1);
+        $this->notifications($user->id);
         Mail::to("dankyamezquita.tf@gmail.com")->send(new \App\Mail\YouMail2($data));
 
         return inertia('Dashboard');
     }
-    public function notifications($id){
-        $users = User::where('id',$id)->select('noti')->pluck('noti')->first();
+    public function notifications($id)
+    {
+        $users = User::where('id', $id)->select('noti')->pluck('noti')->first();
         $username = User::where('id', $id)->select('name')->pluck('name')->first();
         $usertotal = (int)$users + 1;
-        $use = User::where('id',$id)->update(['noti' => (int)$usertotal]);
+        $use = User::where('id', $id)->update(['noti' => (int)$usertotal]);
         $noti = new notification([
-            'title' => "Solicitud de Publicidad agregado bien:".$username,
+            'title' => "Solicitud de Publicidad agregado bien:" . $username,
             'tabla' => 'Solicitud de Publicidad',
             'date' => date('Y-m-d H:i:s'),
             'user_id' => $id,

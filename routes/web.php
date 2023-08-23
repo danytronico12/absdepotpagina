@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\contactddiController;
 use Inertia\Inertia;
 
 /*
@@ -61,4 +62,7 @@ Route::get('/ddi', function () {
 
     return Inertia::render('ddi');
 });
+
+Route::post('/contactenos', [contactddiController::class, 'store'])->name('contactenos');
+
 require __DIR__.'/auth.php';
