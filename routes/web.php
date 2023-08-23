@@ -26,7 +26,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    $multi11 = \App\Models\ddi::orderBy('id','desc')->get();
+    $multi22 = \App\Models\contacteno::orderBy('id','desc')->get();
+
+    return Inertia::render('Dashboard',[ 'multi11' => $multi11,'multi22' => $multi22]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

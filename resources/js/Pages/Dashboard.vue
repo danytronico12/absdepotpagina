@@ -4,32 +4,80 @@ import { Head } from '@inertiajs/vue3';
 import Navhead from "@/Components/navhead.vue";
 import footerF from "@/Components/footerF.vue";
 import {
+    Datatable,
     Dropdown,
     Ripple,
     initTE,
+
 } from "tw-elements";
 import {onMounted, ref} from "vue";
+defineProps({
+    multi11: Array,
+    multi22: Array
+
+});
+
 onMounted(() =>{
-    initTE({ Ripple, Dropdown });
+    initTE({ Ripple, Dropdown, Datatable });
 })
+
 </script>
 
 <template>
     <navhead class="fixed top-0 left-0 right-0 "></navhead>
-
-    <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>
-        </template>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">You're logged in!</div>
-                </div>
-            </div>
+    <div class="p-6">
+        <h5 class=" bg-white p-6 shadow-lg md:text-xl text-xl font-medium leading-tight text-red-900">
+            Lista de sugerencias y comentarios
+        </h5>
+        <div data-te-datatable-init class="p-12">
+            <table>
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Instagram</th>
+                    <th>Edad</th>
+                    <th>Razon</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="mul in multi11">
+                    <td>{{mul.nombre}}</td>
+                    <td>{{mul.telefono}}</td>
+                    <td>{{mul.email}}</td>
+                    <td>{{mul.instagram}}</td>
+                    <td>{{mul.edad}}</td>
+                    <td>{{mul.razon}}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-    </AuthenticatedLayout>
+        <h5 class=" bg-white p-6 shadow-lg md:text-xl text-xl font-medium leading-tight text-red-900">
+            Lista de participante del reclutamiento DDI
+        </h5>
+        <div data-te-datatable-init class="p-12">
+            <table>
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Comentario</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="mul in multi22">
+                    <td>{{mul.nombre}}</td>
+                    <td>{{mul.telefono}}</td>
+                    <td>{{mul.email}}</td>
+                    <td>{{mul.comentario}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <footerF></footerF>
 
 </template>

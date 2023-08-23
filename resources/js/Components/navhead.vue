@@ -133,10 +133,40 @@
                     </li>
                     <div v-if="$page.props.auth.user" class="navbar-end">
                         <div class="relative" data-te-dropdown-position="dropup">
-                        <div tabindex="0" class="dropdown"  id="dropdownMenuButton1u" >
                             <div class="flex">
                                 <div class="flex-initial w-1/2 mt-10">
-                                    <p class="text-base ">{{$page.props.auth.user.name}}</p>
+                                    <Dropdown align="right" width="48">
+                                        <template #trigger>
+                                        <span class="inline-flex rounded-md">
+                                            <button
+                                                type="button"
+                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                            >
+                                                {{ $page.props.auth.user.name }}
+
+                                                <svg
+                                                    class="ml-2 -mr-0.5 h-4 w-4"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20"
+                                                    fill="currentColor"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd"
+                                                    />
+                                                </svg>
+                                            </button>
+                                        </span>
+                                        </template>
+
+                                        <template #content>
+                                            <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
+                                            <DropdownLink :href="route('logout')" method="post" as="button">
+                                                Log Out
+                                            </DropdownLink>
+                                        </template>
+                                    </Dropdown>
                                 </div>
                                 <div class="flex-initial w-1/2 ">
                                     <div class="avatar">
@@ -148,21 +178,6 @@
                                 </div>
                                 <div class="badge">{{$page.props.auth.user.noti}}</div>
                             </div>
-                            <ul tabindex="0" class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-                                aria-labelledby="dropdownMenuButton1u"
-                                data-te-dropdown-menu-ref>
-                                <li  class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                     v-if="$page.props.auth.user.admin === 'admin'" href="/dashboard">
-                                    Dashboard
-                                </li>
-                                <li  class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                     :href="route('profile.edit')"> Editar Perfil </li>
-                                <li  class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                     :href="route('logout')" method="post" as="button">
-                                    Cerrar Sesion
-                                </li>
-                            </ul>
-                        </div>
                         </div>
                     </div>
                 </ul>
@@ -172,15 +187,11 @@
 </template>
 
 <script setup>
-import {
-    Collapse,
-    Dropdown,
-    initTE,
-} from "tw-elements";
+
 import {onMounted, ref} from "vue";
-onMounted(() =>{
-    initTE({ Collapse, Dropdown });
-})
+import Dropdown from '@/Components/Dropdown.vue';
+import DropdownLink from '@/Components/DropdownLink.vue';
+
 </script>
 
 <style scoped>
