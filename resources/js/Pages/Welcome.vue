@@ -96,7 +96,7 @@ onMounted(() =>{
                         class="w-full "
                         src="/storage/image/slider3.jpg"
                         alt="" />
-                    <div class="absolute  md:top-1/2 md:right-1/2 p-6">
+                    <div class="absolute top-4  md:top-1/2 md:right-1/2 p-6">
                         <h5 class="mb-2 top-0 mb-6 md:text-5xl font-medium leading-tight text-white">
                             This is a wider card with supporting text
                         </h5>
