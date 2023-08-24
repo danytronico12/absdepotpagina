@@ -23,17 +23,14 @@
             class="h-96 w-1/2 rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
             src="/storage/image/pexel4.jpg"
             alt="" />
-        <div class="flex flex-col justify-start p-6">
+        <div class="flex flex-col justify-center p-6">
             <h5
-                class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
+                class="mb-2 text-4xl font-medium text-neutral-800 dark:text-neutral-50">
                 Card title
             </h5>
-            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            <p class="mb-4 text-xl text-neutral-600 dark:text-neutral-200">
                 This is a wider card with supporting text below as a natural lead-in
                 to additional content. This content is a little bit longer.
-            </p>
-            <p class="text-xs text-neutral-500 dark:text-neutral-300">
-                Last updated 3 mins ago
             </p>
         </div>
     </div>
@@ -41,17 +38,14 @@
     <div class="p-12"> <div
         class="flex  flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 w-full md:flex-row">
 
-        <div class="flex flex-col justify-start p-6">
+        <div class="flex flex-col justify-center p-6">
             <h5
-                class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
+                class="mb-2 text-4xl font-medium text-neutral-800 dark:text-neutral-50">
                 Card title
             </h5>
-            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            <p class="mb-4 text-xl text-neutral-600 dark:text-neutral-200">
                 This is a wider card with supporting text below as a natural lead-in
                 to additional content. This content is a little bit longer.
-            </p>
-            <p class="text-xs text-neutral-500 dark:text-neutral-300">
-                Last updated 3 mins ago
             </p>
         </div>
         <img
@@ -66,17 +60,14 @@
             class="h-96 w-1/2 rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
             src="/storage/image/pexel22.jpg"
             alt="" />
-        <div class="flex flex-col justify-start p-6">
+        <div class="flex flex-col justify-center p-6">
             <h5
-                class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
+                class="mb-2 text-4xl font-medium text-neutral-800 dark:text-neutral-50">
                 Card title
             </h5>
-            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            <p class="mb-4 text-xl text-neutral-600 dark:text-neutral-200">
                 This is a wider card with supporting text below as a natural lead-in
                 to additional content. This content is a little bit longer.
-            </p>
-            <p class="text-xs text-neutral-500 dark:text-neutral-300">
-                Last updated 3 mins ago
             </p>
         </div>
     </div>
