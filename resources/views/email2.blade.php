@@ -166,14 +166,14 @@
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 
                                                 <div style="font-size: 18px; line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                    <p style="line-height: 140%;">Seguidores: _______________ {{strtoupper($data['seguidores'])}}</p>
-                                                    <p style="line-height: 140%;">Nacimiento: ________________{{strtoupper($data['nacimiento'])}}</p>
-                                                    <p style="line-height: 140%;">Post: ___________________ {{strtoupper($data['post'])}}</p>
-                                                    <p style="line-height: 140%;">Stories: _________________ {{strtoupper($data['stories'])}}</p>
-                                                    <p style="line-height: 140%;">Contenido: _________________ {{strtoupper($data['contenido'])}}</p>
-                                                    <p style="line-height: 140%;">Otros: __________________ {{strtoupper($data['otro'])}}</p>
-                                                    <p style="line-height: 140%;">Usuario: _________________ {{strtoupper($data['usuario'])}}</p>
-                                                    <p style="line-height: 140%;">Redes: ________________ {{strtoupper($data['redes'])}}</p>
+                                                    <p style="line-height: 140%;">Seguidores: {{strtoupper($data['seguidores'])}}</p>
+                                                    <p style="line-height: 140%;">Nacimiento: {{strtoupper($data['nacimiento'])}}</p>
+                                                    <p style="line-height: 140%;">Post: {{strtoupper($data['post'])}}</p>
+                                                    <p style="line-height: 140%;">Stories: {{strtoupper($data['stories'])}}</p>
+                                                    <p style="line-height: 140%;">Contenido: {{strtoupper($data['contenido'])}}</p>
+                                                    <p style="line-height: 140%;">Otros: {{strtoupper($data['otro'])}}</p>
+                                                    <p style="line-height: 140%;">Usuario: {{strtoupper($data['usuario'])}}</p>
+                                                    <p style="line-height: 140%;">Redes: {{strtoupper($data['redes'])}}</p>
                                                 </div>
 
                                             </td>

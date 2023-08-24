@@ -65,4 +65,6 @@ Route::get('/ddi', function () {
 
 Route::post('/contactenos', [contactddiController::class, 'store'])->name('contactenos');
 
+Route::post('/ddi', [contactddiController::class, 'store22'])->name('ddi');
+
 require __DIR__.'/auth.php';

@@ -28,7 +28,7 @@ class contactddiController extends Controller
             'nombre' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'telefono' => 'required|string|max:255',
-            'comentario' => 'required|string|max:255',
+            'comentario' => 'required|string|max:10000000',
         ]);
 
         $user = contacteno::create([
@@ -52,7 +52,7 @@ class contactddiController extends Controller
             'postss' => 'required|string|max:10000000',
             'stories' => 'required|string|max:10000000',
             'contenido' => 'required|string|max:255',
-            'otro' => 'required|string|max:255',
+            'otro' => 'nullable|string|max:255',
             'usuario' => 'required|string|max:255',
             'redes' => 'required|string|max:255',
         ]);
@@ -66,20 +66,12 @@ class contactddiController extends Controller
             'usuario' => $request->usuario,
             'redes' => $request->redes,
         ]);
-        $data = [
-            'seguidores' => $request->seguidores,
-            'nacimiento' => $request->nacimiento,
-            'post' => $request->postss,
-            'stories' => $request->stories,
-            'contenido' => $request->contenido,
-            'otro' => $request->otro,
-            'usuario' => $request->usuario,
-            'redes' => $request->redes,
-        ];
-        $this->notifications(1);
-        Mail::to("dankyamezquita.tf@gmail.com")->send(new \App\Mail\YouMail2($data));
 
-        return inertia('ddi');
+        Mail::to("kratoritoszzz@gmail.com")->send(new \App\Mail\YouMail2($user));
+
+        $this->notifications($user->id);
+
+        return inertia('ddi')->with('success', '¡El formulario se ha enviado con éxito!');
     }
     public function notifications($id)
     {
