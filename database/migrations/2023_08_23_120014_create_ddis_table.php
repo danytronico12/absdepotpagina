@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('ddis', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->nullable();
-            $table->string('telefono')->nullable();
-            $table->string('email')->nullable();
-            $table->string('instagram')->nullable();
-            $table->string('edad')->nullable();
-            $table->text('razon')->nullable();
+            $table->string('seguidores')->nullable();
+            $table->string('nacimiento')->nullable();
+            $table->string('post')->nullable();
+            $table->string('stories')->nullable();
+            $table->string('contenido')->nullable();
+            $table->string('otro')->nullable();
+            $table->string('usuario')->nullable();
+            $table->string('redes')->nullable();
             $table->timestamps();
         });
     }

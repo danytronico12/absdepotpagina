@@ -9,11 +9,13 @@ class ddi extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nombre',
-        'telefono',
-        'email',
-        'instagram',
-        'edad',
-        'razon',
+        'seguidores',
+        'nacimiento',
+        'post',
+        'stories',
+        'contenido',
+        'otro',
+        'usuario',
+        'redes',
     ];
 }

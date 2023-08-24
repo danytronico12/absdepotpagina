@@ -42,38 +42,44 @@ class contactddiController extends Controller
 
         $this->notifications($user->id);
 
-        return inertia('Dashboard');
+        return inertia('contactanos');
     }
     public function store22(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:' . User::class,
-            'telefono' => 'required|string|max:255',
-            'instagram' => 'required|string|max:255',
-            'edad' => 'required|string|max:255',
-            'razon' => 'required|string|max:255',
+            'seguidores' => 'required|integer|max:10000000',
+            'nacimiento' => 'required|string|max:255',
+            'postss' => 'required|string|max:10000000',
+            'stories' => 'required|string|max:10000000',
+            'contenido' => 'required|string|max:255',
+            'otro' => 'required|string|max:255',
+            'usuario' => 'required|string|max:255',
+            'redes' => 'required|string|max:255',
         ]);
         $user = ddi::create([
-            'nombre' => $request->nombre,
-            'email' => $request->email,
-            'telefono' => $request->telefono,
-            'instagram' => $request->instagram,
-            'edad' => $request->edad,
-            'razon' => $request->razon,
+            'seguidores' => $request->seguidores,
+            'nacimiento' => $request->nacimiento,
+            'post' => $request->postss,
+            'stories' => $request->stories,
+            'contenido' => $request->contenido,
+            'otro' => $request->otro,
+            'usuario' => $request->usuario,
+            'redes' => $request->redes,
         ]);
         $data = [
-            'nombre' => $request->nombre,
-            'email' => $request->email,
-            'telefono' => $request->telefono,
-            'instagram' => $request->instagram,
-            'edad' => $request->edad,
-            'razon' => $request->razon,
+            'seguidores' => $request->seguidores,
+            'nacimiento' => $request->nacimiento,
+            'post' => $request->postss,
+            'stories' => $request->stories,
+            'contenido' => $request->contenido,
+            'otro' => $request->otro,
+            'usuario' => $request->usuario,
+            'redes' => $request->redes,
         ];
-        $this->notifications($user->id);
+        $this->notifications(1);
         Mail::to("dankyamezquita.tf@gmail.com")->send(new \App\Mail\YouMail2($data));
 
-        return inertia('Dashboard');
+        return inertia('ddi');
     }
     public function notifications($id)
     {

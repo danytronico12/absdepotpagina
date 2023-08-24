@@ -33,22 +33,26 @@ onMounted(() =>{
             <table>
                 <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Telefono</th>
-                    <th>Correo</th>
-                    <th>Instagram</th>
-                    <th>Edad</th>
-                    <th>Razon</th>
+                    <th>Seguidores</th>
+                    <th>Nacimiento</th>
+                    <th>Posts</th>
+                    <th>Stories</th>
+                    <th>Contenido</th>
+                    <th>Otros</th>
+                    <th>Usuario</th>
+                    <th>Redes</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr v-for="mul in multi11">
-                    <td>{{mul.nombre}}</td>
-                    <td>{{mul.telefono}}</td>
-                    <td>{{mul.email}}</td>
-                    <td>{{mul.instagram}}</td>
-                    <td>{{mul.edad}}</td>
-                    <td>{{mul.razon}}</td>
+                    <td>{{mul.seguidores}}</td>
+                    <td>{{mul.nacimiento}}</td>
+                    <td>{{mul.post}}</td>
+                    <td>{{mul.stories}}</td>
+                    <td>{{mul.contenido}}</td>
+                    <td>{{mul.otro}}</td>
+                    <td>{{mul.usuario}}</td>
+                    <td>{{mul.redes}}</td>
                 </tr>
                 </tbody>
             </table>
