@@ -27,7 +27,8 @@ onMounted(() =>{
     <navhead class="fixed top-0 left-0 right-0 "></navhead>
     <div class="p-6">
         <h5 class=" bg-white p-6 shadow-lg md:text-xl text-xl font-medium leading-tight text-red-900">
-            Lista de sugerencias y comentarios
+            Lista de participante del reclutamiento DDI
+
         </h5>
         <div data-te-datatable-init class="p-12">
             <table>
@@ -58,7 +59,7 @@ onMounted(() =>{
             </table>
         </div>
         <h5 class=" bg-white p-6 shadow-lg md:text-xl text-xl font-medium leading-tight text-red-900">
-            Lista de participante del reclutamiento DDI
+            Lista de sugerencias y comentarios
         </h5>
         <div data-te-datatable-init class="p-12">
             <table>
