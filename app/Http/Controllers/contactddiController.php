@@ -42,6 +42,7 @@ class contactddiController extends Controller
 
         $this->notifications($user->id);
 
+
         return inertia('contactanos');
     }
     public function store22(Request $request)
@@ -71,7 +72,7 @@ class contactddiController extends Controller
 
         $this->notifications($user->id);
 
-        return inertia('ddi')->with('success', '¡El formulario se ha enviado con éxito!');
+        return inertia('ddi');
     }
     public function notifications($id)
     {

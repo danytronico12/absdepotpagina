@@ -27,7 +27,7 @@
               </p>
             </div>
             <div class="relative mb-6" data-te-input-wrapper-init>
-              <input
+              <input required maxlength="255"
                 type="text"
                 class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="exampleFormControlInput2"
@@ -43,7 +43,7 @@
               <InputError class="mt-2" :message="form.errors.nombre" />
             </div>
             <div class="relative mb-6" data-te-input-wrapper-init>
-              <input
+              <input required maxlength="255"
                 type="text"
                 class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="exampleFormControlInput2"
@@ -60,8 +60,8 @@
             </div>
             <!-- Email input -->
             <div class="relative mb-6" data-te-input-wrapper-init>
-              <input
-                type="text"
+              <input required maxlength="255"
+                type="email"
                 class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="exampleFormControlInput2"
                 placeholder="Email address"
@@ -77,7 +77,7 @@
             </div>
             <!--Message textarea-->
             <div class="relative mb-6" data-te-input-wrapper-init>
-              <textarea
+              <textarea required maxlength="10000000"
                 class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="exampleFormControlTextarea13"
                 rows="3"
@@ -105,10 +105,9 @@
               <progress class="progress progress-primary w-56" v-if="form.progress" :value="form.progress.percentage" max="100"></progress>
             </div>
 
-            <!-- Alerta de éxito -->
-            <div v-if="showAlert" class="alert">
-              {{ alertMessage }}
-              <button @click="showAlert = false" class="close-button">Cerrar</button>
+               <!-- La alerta -->
+            <div v-if="alertMessage" class="alert" :class="success == true  ? 'alert-success' : 'alert-error'">
+            {{ alertMessage }}
             </div>
           </form>
         </div>
@@ -124,22 +123,15 @@ import footerF from "@/Components/footerF.vue";
 import InputError from '@/Components/InputError.vue';
 import { onMounted, ref } from "vue";
 import { useForm } from "@inertiajs/vue3";
-// Initialization for ES Users
-import {
-    Ripple,
-    Input,
-    initTE,
-} from "tw-elements";
+import { Ripple, Input, initTE } from "tw-elements";
 
 onMounted(() => {
     initTE({ Input, Ripple });
 })
+
 defineProps({
     status: String,
 });
-
-const showAlert = ref(false); // Variable para mostrar/ocultar la alerta
-const alertMessage = ref(''); // Variable para el contenido de la alerta
 
 const form = useForm({
     nombre: '',
@@ -147,39 +139,44 @@ const form = useForm({
     telefono: '',
     comentario: ''
 });
+const alertMessage = ref(''); // Estado para el mensaje de la alerta
+const success = ref('');
 
 const submit = () => {
     form.post(route('contactenos'), {
-        onFinish: () => {
-            form.reset();
-            showAlert.value = true; // Mostrar la alerta
-            alertMessage.value = '¡El formulario se ha enviado con éxito!';
+        onFinish: (response) => {
+            if (response.data['nombre'] != '' && response.data['email'] != '' && response.data['comentario'] != '' && response.data['telefono'] != '') {
+                alertMessage.value = '¡Formulario enviado con éxito!';
+                success.value = true;
+                form.reset();
+            } else {
+                alertMessage.value = 'Hubo un error al enviar el formulario.';
+                success.value = false;
+
+            }
         },
     });
 };
 </script>
 
+
 <style scoped>
+/* Estilos para la alerta aquí */
 .alert {
-  background-color: #4CAF50;
-  color: white;
   padding: 10px;
-  border-radius: 4px;
   margin-top: 10px;
+  border-radius: 4px;
+  font-weight: bold;
   text-align: center;
 }
 
-.close-button {
-  background-color: #45a049;
-  border: none;
+.alert-success {
+  background-color: #4CAF50; /* Color verde para éxito */
   color: white;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin-left: 10px;
-  cursor: pointer;
-  border-radius: 4px;
+}
+
+.alert-error {
+  background-color: #f44336; /* Color rojo para error */
+  color: white;
 }
 </style>
