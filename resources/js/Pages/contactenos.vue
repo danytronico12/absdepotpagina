@@ -145,6 +145,11 @@ const success = ref('');
 const submit = () => {
     form.post(route('contactenos'), {
         onFinish: (response) => {
+            response.data['nombre'] = response.data['nombre'].trim();
+            response.data['email'] = response.data['email'].trim();
+            response.data['telefono'] = response.data['telefono'].trim();
+            response.data['comentario'] = response.data['comentario'].trim();
+
             if (response.data['nombre'] != '' && response.data['email'] != '' && response.data['comentario'] != '' && response.data['telefono'] != '') {
                 alertMessage.value = '¡Formulario enviado con éxito!';
                 success.value = true;

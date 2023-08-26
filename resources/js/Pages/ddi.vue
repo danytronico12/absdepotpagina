@@ -403,6 +403,14 @@ const success = ref('');
 const submit = () => {
     form.post(route('ddi'), {
         onFinish: (response) => {
+            response.data['seguidores'] = response.data['seguidores'].trim();
+            response.data['nacimiento'] = response.data['nacimiento'].trim();
+            response.data['postss'] = response.data['postss'].trim();
+            response.data['stories'] = response.data['stories'].trim();
+            response.data['contenido'] = response.data['contenido'].trim();
+            response.data['usuario'] = response.data['usuario'].trim();
+            response.data['redes'] = response.data['stories'].trim();
+
             if (response.data['seguidores'] != ''  && response.data['nacimiento'] != '' && response.data['postss'] != '' && response.data['stories'] != '' && response.data['contenido'] != '' && response.data['usuario'] != '' && response.data['redes'] != '') {
                 alertMessage.value = '¡Formulario enviado con éxito!';
                 success.value = true;
