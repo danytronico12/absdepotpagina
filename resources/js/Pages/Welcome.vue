@@ -60,13 +60,9 @@ onMounted(() =>{
                     class="block w-full bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                     <img
                         class="w-full"
-                        src="/storage/image/slider1.jpg"
+                        src="/storage/image/1.png"
                         alt="" />
-                    <div class="absolute top-0 md:top-1/2 md:left-1/2 p-6">
-                        <h5 class="mb-2 md:text-5xl font-medium leading-tight text-white">
-                            This is a wider card with supporting text
-                        </h5>
-                    </div>
+
                 </div>
             </div>
             <!--Second item-->
@@ -77,13 +73,9 @@ onMounted(() =>{
                     class="block w-full bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                     <img
                         class="w-full"
-                        src="/storage/image/slider2.jpg"
+                        src="/storage/image/2.png"
                         alt="" />
-                    <div class="absolute top-0 md:bottom-1/3 md:left-1/2 p-6">
-                        <h5 class="mb-2 md:text-5xl font-medium leading-tight text-white">
-                            This is a wider card with supporting text
-                        </h5>
-                    </div>
+
                 </div>
             </div>
             <!--Third item-->
@@ -94,13 +86,19 @@ onMounted(() =>{
                     class="block w-full  bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                     <img
                         class="w-full "
-                        src="/storage/image/slider3.jpg"
+                        src="/storage/image/3.png"
                         alt="" />
-                    <div class="absolute top-4  md:top-1/2 md:right-1/2 p-6">
-                        <h5 class="mb-2 top-0 mb-6 md:text-5xl font-medium leading-tight text-white">
-                            This is a wider card with supporting text
-                        </h5>
-                    </div>
+                </div>
+            </div>
+            <div
+                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item>
+                <div
+                    class="block w-full  bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                    <img
+                        class="w-full "
+                        src="/storage/image/4.png"
+                        alt="" />
                 </div>
             </div>
         </div>
@@ -156,102 +154,8 @@ onMounted(() =>{
             >
         </button>
     </div>
-    <div
-        class="py-12 block rounded-lg text-center bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-        <h5
-            class="mb-2 text-4xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-            Reclutamiento ddi
-        </h5>
-        <p class="mb-4 text-2xl text-neutral-600 dark:text-neutral-200">
-            Quieres ganar dinero? unete a nosotros en nuestro formulario de reclutamiento DDI
 
-        </p>
-        <a href="/ddi"             class="mb-2 block w-full rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
-            Ver formulario
-        </a>
-    </div>
-    <div class="p-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 ">
-    <div
-        class="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
-        <a href="#!">
-            <img
-                class="rounded-t-lg"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
-                alt="Hollywood Sign on The Hill" />
-        </a>
-        <div class="p-6">
-            <h5
-                class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                Card title
-            </h5>
-            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-            </p>
-        </div>
-    </div>
-    <div
-        class="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
-        <a href="#!">
-            <img
-                class="rounded-t-lg"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/042.webp"
-                alt="Palm Springs Road" />
-        </a>
-        <div class="p-6">
-            <h5
-                class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                Card title
-            </h5>
-            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-            </p>
-        </div>
-    </div>
-    <div
-        class="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
-        <a href="#!">
-            <img
-                class="rounded-t-lg"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/044.webp"
-                alt="Skyscrapers" />
-        </a>
-        <div class="p-6">
-            <h5
-                class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                Card title
-            </h5>
-            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content.
-            </p>
-        </div>
-    </div>
-    <div
-        class="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
-        <a href="#!">
-            <img
-                class="rounded-t-lg"
-                src="https://tecdn.b-cdn.net/img/new/standard/city/043.webp"
-                alt="Los Angeles Skyscrapers" />
-        </a>
-        <div class="p-6">
-            <h5
-                class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                Card title
-            </h5>
-            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-            </p>
-        </div>
-    </div>
-    </div>
-    <div
+    <div id="bajarok"
         class=" p-16 flex flex-col rounded-lg bg-neutral-300 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700  md:flex-row">
         <img
             class="h-1/2 w-1/2 rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
@@ -288,21 +192,29 @@ onMounted(() =>{
             src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
             alt="" />
     </div>
-        <div
-            class="relative block w-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-            <img
-                class="w-full h-96 object-cover saturate-50"
-                src="/storage/image/banner.jpg"
-                alt="" />
-            <div class="absolute text-center  inset-x-[15%] inset-y-[25%]">
-                <h5 class=" bg-white p-6 shadow-2xl md:text-5xl text-xl font-medium leading-tight text-red-900">
-                    Quieres ganar dinero? unete a nosotros en nuestro formulario de reclutamiento DDI
-                </h5>
-                <a href="/ddi"             class="mb-2 cursor-pointer  w-full rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
-                    Ver formulario
-                </a>
+        <div class="relative overflow-hidden bg-cover bg-no-repeat bg-blue-600" style="
+        background-position: 50%;
+        height: 900px;
+      ">
+            <div
+                class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed">
+                <div class="flex h-full items-center justify-center">
+                    <div class="p-6 text-center rounded-xl bg-white w-1/3 text-red-600 md:px-12">
+                        <h1 class="mt-2 mb-16 text-5xl font-black  md:text-6xl xl:text-7xl">
+                            Se parte de un equipo TOP
+                        </h1>
+                        <h4 class="mt-2 mb-16 text-xl font-medium text-black tracking-tight md:text-2xl xl:text-2xl">
+                            Un DDI es un influencer que genera ingresos directos, en dinero por compartir su contenido los beneficios que ofrecen
+                            ABS DEPOT como app. como DDi tendras un enlace con el que tus seguidores accedan a la APP, hagan compras y listo!
+                        </h4>
+                        <button type="button"
+                                class="rounded-lg border-light bg-red-600 text-white border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200"
+                                data-te-ripple-init data-te-ripple-color="light">
+                            Recibes un % por cada compra realizada
+                        </button>
+                    </div>
+                </div>
             </div>
-
         </div>
     <footerF></footerF>
     </div>
