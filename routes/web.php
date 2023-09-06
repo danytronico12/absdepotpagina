@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -27,10 +28,24 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    $multi11 = \App\Models\ddi::orderBy('id','desc')->get();
-    $multi22 = \App\Models\contacteno::orderBy('id','desc')->get();
 
-    return Inertia::render('Dashboard',[ 'multi11' => $multi11,'multi22' => $multi22]);
+
+    if (isset($_GET['seguidoresCheckbox']) && isset($_GET['nombreCheckbox'])) {
+        $multi11 = \App\Models\ddi::orderBy('seguidores', 'desc')
+            ->orderBy('usuario', 'desc')
+            ->get();
+    } else if (isset($_GET['seguidoresCheckbox'])) {
+        $multi11 = \App\Models\ddi::orderBy('seguidores', 'desc')->get();
+    } else if (isset($_GET['nombreCheckbox'])) {
+        $multi11 = \App\Models\ddi::orderBy('usuario', 'desc')->get();
+    } else {
+        $multi11 = \App\Models\ddi::orderBy('id', 'desc')->get();
+    }
+
+
+    $multi22 = \App\Models\contacteno::orderBy('id', 'desc')->get();
+
+    return Inertia::render('Dashboard', ['multi11' => $multi11, 'multi22' => $multi22]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -67,4 +82,4 @@ Route::post('/contactenos', [contactddiController::class, 'store'])->name('conta
 
 Route::post('/ddi', [contactddiController::class, 'store22'])->name('ddi');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
