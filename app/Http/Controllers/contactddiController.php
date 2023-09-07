@@ -49,9 +49,9 @@ class contactddiController extends Controller
     {
         $request->validate([
             'seguidores' => 'required|integer|max:10000000',
-            'nacimiento' => 'required|string|max:255',
-            'postss' => 'required|string|max:10000000',
-            'stories' => 'required|string|max:10000000',
+            'nacimiento' => 'required|date',
+            'post' => 'required|integer|max:10000000',
+            'stories' => 'required|integer|max:10000000',
             'contenido' => 'required|string|max:255',
             'otro' => 'nullable|string|max:255',
             'usuario' => 'required|string|max:255',
@@ -73,6 +73,20 @@ class contactddiController extends Controller
         $this->notifications($user->id);
 
         return inertia('ddi');
+    }
+
+    public function destroy(Request $request)
+    {
+
+        $ddi = ddi::find($request->idDDI);
+
+        if (!$ddi) {
+            return inertia('dashboard');
+        }
+
+        $ddi->delete();
+
+        return inertia('dashboard');
     }
     public function notifications($id)
     {

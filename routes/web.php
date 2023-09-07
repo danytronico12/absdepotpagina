@@ -5,7 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\contactddiController;
 use Inertia\Inertia;
-
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,25 +27,42 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard', function (Request $request) {
 
+    $multi11query = \App\Models\ddi::query();
 
-    if (isset($_GET['seguidoresCheckbox']) && isset($_GET['nombreCheckbox'])) {
-        $multi11 = \App\Models\ddi::orderBy('seguidores', 'desc')
-            ->orderBy('usuario', 'desc')
-            ->get();
-    } else if (isset($_GET['seguidoresCheckbox'])) {
-        $multi11 = \App\Models\ddi::orderBy('seguidores', 'desc')->get();
-    } else if (isset($_GET['nombreCheckbox'])) {
-        $multi11 = \App\Models\ddi::orderBy('usuario', 'desc')->get();
-    } else {
-        $multi11 = \App\Models\ddi::orderBy('id', 'desc')->get();
+    if ($request->has('clearFiltre')) {
+        return redirect(url('/dashboard'));
     }
 
+    //Flitros
+    if ($request->has('seguidoresCheckbox')) {
+        $multi11query->orderBy('seguidores', 'desc');
+    }
 
-    $multi22 = \App\Models\contacteno::orderBy('id', 'desc')->get();
+    if ($request->has('fechaCheckbox')) {
+        $multi11query->orderBy('created_at', 'desc');
+    }
 
-    return Inertia::render('Dashboard', ['multi11' => $multi11, 'multi22' => $multi22]);
+    if ($request->has('nombreCheckbox')) {
+        $multi11query->orderBy('usuario', 'desc');
+    }
+
+    if ($request->has('redSocial')) {
+        if ($request->redSocial != 'null') {
+             $multi11query->where('redes', $request->redSocial);
+        }
+    }
+
+    if ($request->has('contenido')) {
+        if ($request->contenido != 'null') {
+             $multi11query->where('contenido', $request->contenido);
+        }
+    }
+
+    $multi11 = $multi11query->get();
+
+    return Inertia::render('Dashboard', ['multi11' => $multi11]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -57,10 +74,7 @@ Route::get('/nosotros', function () {
 
     return Inertia::render('nosotros');
 });
-Route::get('/ddi', function () {
 
-    return Inertia::render('ddi');
-});
 Route::get('/servicios', function () {
 
     return Inertia::render('servicios');
@@ -81,5 +95,7 @@ Route::get('/ddi', function () {
 Route::post('/contactenos', [contactddiController::class, 'store'])->name('contactenos');
 
 Route::post('/ddi', [contactddiController::class, 'store22'])->name('ddi');
+
+Route::delete('/ddi', [contactddiController::class, 'destroy'])->name('ddi.destroy');
 
 require __DIR__ . '/auth.php';
