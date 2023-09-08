@@ -66,10 +66,7 @@ const submit = (id) => {
 
     form.delete(route('ddi.destroy'), {
         onFinish: (response) => {
-            if (response.status === 204) {
-                // Eliminación exitosa, recarga la página
-                location.reload();
-            }
+            location.reload();
         },
     });
 
