@@ -74,7 +74,10 @@ Route::get('/nosotros', function () {
 
     return Inertia::render('nosotros');
 });
+Route::get('/ddi', function () {
 
+    return Inertia::render('ddi');
+});
 Route::get('/servicios', function () {
 
     return Inertia::render('servicios');
@@ -94,7 +97,7 @@ Route::get('/ddi', function () {
 
 Route::post('/contactenos', [contactddiController::class, 'store'])->name('contactenos');
 
-Route::post('/ddi', [contactddiController::class, 'store22'])->name('ddi');
+Route::post('/ddi', [contactddiController::class, 'store22'])->name('store22');
 
 Route::delete('/ddi', [contactddiController::class, 'destroy'])->name('ddi.destroy');
 

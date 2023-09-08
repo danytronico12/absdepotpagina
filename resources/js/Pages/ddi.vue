@@ -1,9 +1,17 @@
 <template>
     <navhead ></navhead>
-    <div class="p-12"> <div
+    <div
+        class="block bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+        <img
+            class=" w-full h-full "
+            src="/storage/image/222.png"
+            alt="" />
+    </div>
+    <div class="p-12">
+        <div
         class="flex  flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 w-full md:flex-row">
 
-        <div class="flex w-full  flex-col justify-start p-6">
+        <div class="flex w-full  flex-col justify-center p-6">
             <div
                 class="block w-full rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                <!-- La alerta -->
@@ -57,15 +65,15 @@
                         <label
                             for="exampleFormControlInput2"
                             class="pointer-events-none  mb-0 md:w-full origin-[0_0]  pt-[0.37rem] leading-[1.5] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                        >¿Cuántos posts subes  por semana (FEED)?
+                        >¿Cuántos postss subes  por semana (FEED)?
 
                         </label>
                         <input required
                             type="text"
                             class="peer  block min-h-[auto] w-auto md:w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                             id="exampleFormControlInput2"
-                            placeholder="Name"  v-model="form.postss"/>
-                        <InputError class="mt-2" :message="form.errors.postss" />
+                            placeholder="Name"  v-model="form.posts"/>
+                        <InputError class="mt-2" :message="form.errors.posts" />
 
 
                     </div>
@@ -350,7 +358,7 @@
                     <!-- Login button -->
                     <div class="text-center lg:text-left">
                         <div class="form-control mt-6">
-                            <button                                 class="inline-block rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                            <button  class="inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                             >Enviar</button>
                         </div>
                         <progress class="progress progress-primary w-56" v-if="form.progress" :value="form.progress.percentage" max="100"></progress>
@@ -360,10 +368,6 @@
                 </form>
             </div>
         </div>
-        <img
-            class="h-96 md:w-1/3 w-full rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
-            src="/storage/image/pexel11.jpg"
-            alt="" />
     </div>
     </div>
     <footerF></footerF>
@@ -389,7 +393,7 @@ onMounted(() =>{
 const form = useForm({
     seguidores: '',
     nacimiento: '',
-    postss: '',
+    posts: '',
     stories: '',
     contenido: '',
     otro: '',
@@ -401,17 +405,15 @@ const alertMessage = ref(''); // Estado para el mensaje de la alerta
 const success = ref('');
 
 const submit = () => {
-    form.post(route('ddi'), {
+    form.post(route('store22'), {
         onFinish: (response) => {
-            response.data['seguidores'] = response.data['seguidores'].trim();
+            console.log(response);
             response.data['nacimiento'] = response.data['nacimiento'].trim();
-            response.data['postss'] = response.data['postss'].trim();
-            response.data['stories'] = response.data['stories'].trim();
             response.data['contenido'] = response.data['contenido'].trim();
             response.data['usuario'] = response.data['usuario'].trim();
             response.data['redes'] = response.data['stories'].trim();
 
-            if (response.data['seguidores'] != ''  && response.data['nacimiento'] != '' && response.data['postss'] != '' && response.data['stories'] != '' && response.data['contenido'] != '' && response.data['usuario'] != '' && response.data['redes'] != '') {
+            if (response.data['seguidores'] != ''  && response.data['nacimiento'] != '' && response.data['posts'] != '' && response.data['stories'] != '' && response.data['contenido'] != '' && response.data['usuario'] != '' && response.data['redes'] != '') {
                 alertMessage.value = '¡Formulario enviado con éxito!';
                 success.value = true;
                 form.reset();
