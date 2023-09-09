@@ -5,12 +5,15 @@ import Navhead from "@/Components/navhead.vue";
 import footerF from "@/Components/footerF.vue";
 import {
     Carousel,
+  Ripple,
     initTE,
+Collapse,
+  Dropdown,
 } from "tw-elements";
 
 import {onMounted, ref} from "vue";
 onMounted(() =>{
-    initTE({ Carousel });
+    initTE({ Carousel,Ripple,Collapse,Dropdown });
 })
 </script>
 
@@ -199,7 +202,7 @@ onMounted(() =>{
             <div
                 class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed">
                 <div class="flex h-full items-center justify-center">
-                    <div class="p-6 text-center rounded-xl bg-white w-1/3 text-red-600 md:px-12">
+                    <div class="md:p-6 p-2 text-center rounded-xl bg-white w-full md:w-1/3 text-red-600 md:px-12">
                         <h1 class="mt-2 mb-16 text-5xl font-black  md:text-6xl xl:text-7xl">
                             Se parte de un equipo TOP
                         </h1>
@@ -207,11 +210,11 @@ onMounted(() =>{
                             Un DDI es un influencer que genera ingresos directos, en dinero por compartir su contenido los beneficios que ofrecen
                             ABS DEPOT como app. como DDi tendras un enlace con el que tus seguidores accedan a la APP, hagan compras y listo!
                         </h4>
-                        <button type="button"
-                                class="rounded-lg border-light bg-red-600 text-white border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200"
+                        <button type="button" 
+                                class="rounded-lg border-light text-md bg-red-600 text-white border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200"
                                 data-te-ripple-init data-te-ripple-color="light">
-                            Recibes un % por cada compra realizada
-                        </button>
+                           <a href="/ddi"> Recibes un % por cada compra realizada</a>
+                        </button  >
                     </div>
                 </div>
             </div>
