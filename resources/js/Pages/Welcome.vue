@@ -171,7 +171,7 @@ onMounted(() =>{
             alt="" />
         <div class="flex flex-col my-auto justify-start p-6">
 
-            <p class="mb-4 text-3xl text-neutral-600 dark:text-neutral-200">
+            <p class="mb-4 text-3xl text-neutral-600 dark:text-neutral-200" style="color: #000">
                 Mas de 20 años en el mercado con experiencia garantizada y clientes satisfechos
             </p>
 
@@ -182,7 +182,7 @@ onMounted(() =>{
 
         <div class="flex flex-col my-auto justify-start p-6">
 
-            <p class="mb-4 text-3xl text-neutral-600 dark:text-neutral-200">
+            <p class="mb-4 text-3xl text-neutral-600 dark:text-neutral-200" style="color: #000">
                 App funcional para pedidos en santiago
             </p>
 
@@ -199,7 +199,7 @@ onMounted(() =>{
                 src="/storage/image/10.png"
                 alt="" />
             <div class="flex flex-col my-auto justify-start p-6">
-                <p class="mb-4 text-3xl text-neutral-600 dark:text-neutral-200">
+                <p class="mb-4 text-3xl" style="color: #000">
                     Se parte de un equipo top de profesionales que generan ingresos con sus redes sociales
                 </p>
 

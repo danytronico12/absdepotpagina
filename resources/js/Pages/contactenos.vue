@@ -1,8 +1,8 @@
 <template>
   <navhead></navhead>
   <div class="p-12">
-    <div
-      class="flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 w-full md:flex-row"
+    <div style="background: #fff"
+      class="flex flex-col  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 w-full md:flex-row"
     >
       <img
         class="h-96 md:w-1/2 w-full rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
@@ -10,8 +10,8 @@
         alt=""
       />
       <div class="flex w-full flex-col justify-start p-6">
-        <div
-          class="block w-full rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
+        <div style="background: #fff"
+          class="block w-full  p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
         >
           <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
@@ -23,7 +23,7 @@
               class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300"
             >
 
-              <p class="mx-4 mb-0 text-center text-2xl font-semibold dark:text-white">
+              <p class="mx-4 mb-0 text-center text-2xl font-semibold dark:text-white" style="color: #000">
                 Contactanos
               </p>
             </div>
@@ -35,7 +35,7 @@
                 placeholder="Name"
                 v-model="form.nombre"
               />
-              <label
+              <label style="color: #000"
                 for="exampleFormControlInput2"
                 class="pointer-events-none mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
               >
@@ -51,7 +51,7 @@
                 placeholder="Name"
                 v-model="form.telefono"
               />
-              <label
+              <label style="color: #000"
                 for="exampleFormControlInput2"
                 class="pointer-events-none mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
               >
@@ -68,7 +68,7 @@
                 placeholder="Email address"
                 v-model="form.email"
               />
-              <label
+              <label style="color: #000"
                 for="exampleFormControlInput2"
                 class="pointer-events-none mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
               >
@@ -85,7 +85,7 @@
                 placeholder="Message"
                 v-model="form.comentario"
               ></textarea>
-              <label
+              <label style="color: #000"
                 for="exampleFormControlTextarea13"
                 class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
               >

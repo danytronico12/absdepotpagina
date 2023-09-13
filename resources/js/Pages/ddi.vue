@@ -26,13 +26,13 @@
                     <div
                         class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
                         <p
-                            class="mx-4 mb-0 text-center text-2xl font-semibold dark:text-white">
+                            class="mx-4 mb-0 text-center text-2xl font-semibold dark:text-white" style="color: #000">
                             Reclutamiento DDI
                         </p>
                     </div>
                     <div class="grid sm:grid-cols-2 ">
                     <div class="relative  md:p-8 p-2" >
-                        <label
+                        <label style="color: #000"
                             for="exampleFormControlInput2"
                             class="pointer-events-none  w-auto md:w-full origin-[0_0]  pt-[0.37rem] leading-[1.5] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                         >¿Tienes 1,000 o más  seguidores en Instagram?
@@ -48,7 +48,7 @@
 
                     </div>
                     <div class="relative md:p-8 p-2 " >
-                        <label
+                        <label style="color: #000"
                             for="exampleFormControlInput2"
                             class="pointer-events-none  mb-0 w-auto md:w-full origin-[0_0]  pt-[0.37rem] leading-[1.5] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                         >Fecha de nacimiento:
@@ -62,7 +62,7 @@
                         <InputError class="mt-2" :message="form.errors.nacimiento" />
                     </div>
                     <div class="relative md:p-8 p-2">
-                        <label
+                        <label style="color: #000"
                             for="exampleFormControlInput2"
                             class="pointer-events-none  mb-0 md:w-full origin-[0_0]  pt-[0.37rem] leading-[1.5] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                         >¿Cuántos posts subes  por semana (FEED)?
@@ -79,7 +79,7 @@
                     </div>
                     <!-- Email input -->
                     <div class="relative md:p-8 p-2">
-                        <label
+                        <label style="color: #000"
                             for="exampleFormControlInput2"
                             class="pointer-events-none  mb-0 md:w-full origin-[0_0]  pt-[0.37rem] leading-[1.5] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                         >¿Cuántos Stories subes por día?
@@ -93,7 +93,7 @@
                         <InputError class="mt-2" :message="form.errors.stories" />
                     </div>
                     <div class="mb-2 block min-h-[1.5rem] pl-[1.5rem] md:p-8 p-2">
-                        <label
+                        <label style="color: #000"
                             class="pointer-events-none  mb-0 md:w-full origin-[0_0]  pt-[0.37rem] leading-[1.5] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                         >¿De qué se trata tu contenido?</label>
                         <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
@@ -105,7 +105,7 @@
                             id="exampleCheck3"
                             v-model="form.contenido"
                         />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck3"
                         >
@@ -121,7 +121,7 @@
                         id="exampleCheck3"
                         v-model="form.contenido"
                     />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck3"
                         >
@@ -138,7 +138,7 @@
                             id="exampleCheck3"
                             v-model="form.contenido"
                         />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck3"
                         >
@@ -155,7 +155,7 @@
                             id="exampleCheck3"
                             v-model="form.contenido"
                         />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck3"
                         >
@@ -172,7 +172,7 @@
                             id="exampleCheck3"
                             v-model="form.contenido"
                         />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck3"
                         >
@@ -189,7 +189,7 @@
                             id="exampleCheck3"
                             v-model="form.contenido"
                         />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck3"
                         >
@@ -201,7 +201,7 @@
 
                     <!--Message textarea-->
                     <div class="relative md:p-8 p-2 " >
-                        <label
+                        <label style="color: #000"
                             class="pointer-events-none  mb-0 md:w-full origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                         >Marca cuáles de las siguientes  <br/> redes manejas:
                         </label>
@@ -214,7 +214,7 @@
                             id="exampleCheck3"
                               v-model="form.redes"
                             />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck3"
                            >
@@ -231,7 +231,7 @@
                             id="exampleCheck33"
                             v-model="form.redes"
                             />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck33"
                         >
@@ -247,7 +247,7 @@
                         id="exampleCheck333"
                         v-model="form.redes"
                         />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck333"
                         >
@@ -264,7 +264,7 @@
                             id="exampleCheck3333"
                             v-model="form.redes"
                             />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck3333"
                         >
@@ -281,7 +281,7 @@
                             id="exampleCheck3"
                             v-model="form.redes"
                             />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck33333"
                         >
@@ -298,7 +298,7 @@
                             id="exampleCheck33333"
                             v-model="form.redes"
                             />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck33333"
                         >
@@ -315,7 +315,7 @@
                             id="exampleCheck333333"
                             v-model="form.redes"
                             />
-                        <label
+                        <label style="color: #000"
                             class="inline-block pl-[0.15rem] hover:cursor-pointer"
                             for="exampleCheck3333333"
                         >
@@ -325,7 +325,7 @@
                         </div>
                     </div>
                         <div class="relative md:p-8 p-2 " >
-                            <label
+                            <label style="color: #000"
                                 for="exampleFormControlInput2"
                                 class="pointer-events-none  mb-0 md:w-full origin-[0_0] pt-[0.37rem] leading-[1.5] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                             >Otros
@@ -340,7 +340,7 @@
 
                         </div>
                         <div class="relative md:p-8 p-2" >
-                            <label
+                            <label style="color: #000"
                                 for="exampleFormControlInput2"
                                 class="pointer-events-none  mb-0  md:w-full origin-[0_0]  pt-[0.37rem] leading-[1.5]] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                             >compartenos tu Usuario de instagram
