@@ -8,11 +8,11 @@
             alt="" />
     </div>
     <div class="p-12">
-        <div
-        class="flex  flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 w-full md:flex-row">
+        <div style="background: #d4d3d3"
+        class="flex   flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 w-full md:flex-row">
 
         <div class="flex w-full  flex-col justify-center p-2 md:p-6">
-            <div
+            <div style="background: #fff"
                 class="block w-full rounded-lg bg-white p-2 md:p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                <!-- La alerta -->
             <div v-if="alertMessage" class="alert" :class="success == true  ? 'alert-success' : 'alert-error'">

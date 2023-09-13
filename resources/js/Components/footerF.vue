@@ -89,12 +89,10 @@
                             <path
                                 d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
                         </svg>
-                        Tailwind ELEMENTS
+                        ABS Depot
                     </h6>
                     <p>
-                        Here you can use rows and columns to organize your footer
-                        content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
+                       El logotipo, los textos y imagenes de ABS depot es propiedad unica y privada, con copyright
                     </p>
                 </div>
 
@@ -155,7 +153,7 @@
                             <path
                                 d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                         </svg>
-                        info@example.com
+                        absdepot@gmail.com
                     </p>
                     <p class="mb-4 flex items-center justify-center md:justify-start">
                         <svg
@@ -193,7 +191,8 @@
             <a
                 class="font-semibold text-neutral-600 dark:text-neutral-400"
                 href="https://tailwind-elements.com/"
-            >Tailwind Elements</a
+            >
+                2023 Copyright: ABS Depot</a
             >
         </div>
     </footer>

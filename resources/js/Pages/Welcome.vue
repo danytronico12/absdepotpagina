@@ -1,6 +1,5 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-import navhead from "@/Components/navhead.vue";
 import Navhead from "@/Components/navhead.vue";
 import footerF from "@/Components/footerF.vue";
 import {
@@ -49,6 +48,12 @@ onMounted(() =>{
                 data-te-slide-to="2"
                 class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
                 aria-label="Slide 3"></button>
+            <button
+                type="button"
+                data-te-target="#carouselExampleIndicators"
+                data-te-slide-to="3"
+                class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+                aria-label="Slide 4"></button>
         </div>
 
         <!--Carousel items-->
@@ -158,63 +163,70 @@ onMounted(() =>{
         </button>
     </div>
 
-    <div id="bajarok"
-        class=" p-16 flex flex-col rounded-lg bg-neutral-300 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700  md:flex-row">
+    <div id="bajarok" style="background: #d2d2d2"
+        class=" p-16 flex flex-col   shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700  md:flex-row">
         <img
             class="h-1/2 w-1/2 rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
-            src="https://tecdn.b-cdn.net/wp-content/uploads/2020/06/vertical.jpg"
+            src="/storage/image/8.png"
             alt="" />
         <div class="flex flex-col my-auto justify-start p-6">
-            <h5
-                class="mb-2 text-5xl font-medium text-neutral-800 dark:text-neutral-50">
-                Card title
-            </h5>
-            <p class="mb-4 text-2xl text-neutral-600 dark:text-neutral-200">
-                This is a wider card with supporting text below as a natural lead-in
-                to additional content. This content is a little bit longer.
+
+            <p class="mb-4 text-3xl text-neutral-600 dark:text-neutral-200">
+                Mas de 20 años en el mercado con experiencia garantizada y clientes satisfechos
             </p>
 
         </div>
     </div>
-    <div
-        class=" p-16 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700  md:flex-row">
+    <div style="background: #fff"
+        class=" p-16 flex flex-col  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700  md:flex-row">
 
         <div class="flex flex-col my-auto justify-start p-6">
-            <h5
-                class="mb-2 text-5xl font-medium text-neutral-800 dark:text-neutral-50">
-                Card title
-            </h5>
-            <p class="mb-4 text-2xl text-neutral-600 dark:text-neutral-200">
-                This is a wider card with supporting text below as a natural lead-in
-                to additional content. This content is a little bit longer.
+
+            <p class="mb-4 text-3xl text-neutral-600 dark:text-neutral-200">
+                App funcional para pedidos en santiago
             </p>
 
         </div>
         <img
             class="h-1/2 w-1/2 rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
-            src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
+            src="/storage/image/9.png"
             alt="" />
     </div>
+        <div  style="background: #d2d2d2"
+             class=" p-16 flex flex-col   shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700  md:flex-row">
+            <img
+                class="h-1/2 w-1/2 rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
+                src="/storage/image/10.png"
+                alt="" />
+            <div class="flex flex-col my-auto justify-start p-6">
+                <p class="mb-4 text-3xl text-neutral-600 dark:text-neutral-200">
+                    Se parte de un equipo top de profesionales que generan ingresos con sus redes sociales
+                </p>
+
+            </div>
+        </div>
         <div class="relative overflow-hidden bg-cover bg-no-repeat bg-blue-600" style="
+
         background-position: 50%;
         height: 900px;
       ">
             <div
                 class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed">
-                <div class="flex h-full items-center justify-center">
-                    <div class="md:p-6 p-2 text-center rounded-xl bg-white w-full md:w-1/3 text-red-600 md:px-12">
-                        <h1 class="mt-2 mb-16 text-5xl font-black  md:text-6xl xl:text-7xl">
-                            Se parte de un equipo TOP
+                <div class="flex h-full items-center justify-center px-3">
+                    <div style="background: #fff" class="grid grid-cols-1 px-2  md:grid-cols-2 md:p-6 p-2 text-center rounded-xl bg-white w-full md:w-3/4 text-red-600 md:px-12">
+                        <h1 class="mt-2 mb-16 lg:text-5xl font-black  md:text-3xl xl:text-7xl">
+                            REGISTRATE EN NUESTRO WEBINAR
                         </h1>
+                        <div>
                         <h4 class="mt-2 mb-16 text-xl font-medium text-black tracking-tight md:text-2xl xl:text-2xl">
-                            Un DDI es un influencer que genera ingresos directos, en dinero por compartir su contenido los beneficios que ofrecen
-                            ABS DEPOT como app. como DDi tendras un enlace con el que tus seguidores accedan a la APP, hagan compras y listo!
+                        Y enterate de todos los detalles que necesitas para empezar a generar ingresos con tus redes
                         </h4>
-                        <button type="button" 
+                        <button type="button"
                                 class="rounded-lg border-light text-md bg-red-600 text-white border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200"
                                 data-te-ripple-init data-te-ripple-color="light">
-                           <a href="/ddi"> Recibes un % por cada compra realizada</a>
+                           <a href="/ddi">QUIERO CONVERTIRME EN DDI</a>
                         </button  >
+                        </div>
                     </div>
                 </div>
             </div>

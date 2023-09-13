@@ -6,7 +6,7 @@
     >
       <img
         class="h-96 md:w-1/2 w-full rounded-t-lg object-cover md:h-auto md:!rounded-none md:!rounded-l-lg"
-        src="/storage/image/pexel4.jpg"
+        src="/storage/image/logo.png"
         alt=""
       />
       <div class="flex w-full flex-col justify-start p-6">
