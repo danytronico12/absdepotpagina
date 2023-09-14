@@ -73,6 +73,63 @@ const submit = (id) => {
 
 
 };
+//reordenar
+//usuario
+var reorderUserBool = ref(false);
+const reorderUser = () => {
+    if (reorderUserBool.value === true) {
+        reorderUserBool = ref(false);
+        filteredResults.value.reverse();
+    } else {
+
+        filteredResults.value.sort(function (a, b) {
+
+            var usuarioA = a.usuario.toLowerCase();
+            var usuarioB = b.usuario.toLowerCase();
+            if (usuarioA < usuarioB) {
+                return -1;
+            }
+            if (usuarioA > usuarioB) {
+                return 1;
+            }
+            return 0;
+        });
+        reorderUserBool = ref(true);
+    }
+};
+
+//usuario
+var reorderFollowersBool = ref(false);
+const reorderFollowers = () => {
+    if (reorderFollowersBool.value === true) {
+        reorderFollowersBool = ref(false);
+        filteredResults.value.reverse();
+    } else {
+
+        filteredResults.value.sort(function (a, b) {
+            return b.seguidores - a.seguidores;
+        });
+        reorderFollowersBool = ref(true);
+    }
+};
+
+//created_at
+var reorderCreated_atBool = ref(false);
+const reorderCreated_at = () => {
+    if (reorderCreated_atBool.value === true) {
+        reorderCreated_atBool = ref(false);
+        filteredResults.value.reverse();
+    } else {
+
+        filteredResults.value.sort(function (a, b) {
+            var fechaA = new Date(a.created_at);
+            var fechaB = new Date(b.created_at);
+
+            return fechaB - fechaA;
+        });
+        reorderCreated_atBool = ref(true);
+    }
+};
 
 onMounted(() => {
     initTE({ Select, Modal, Ripple, Dropdown, Datatable });
@@ -91,81 +148,6 @@ onMounted(() => {
             </h5>
             <div class="overflow-x-auto">
 
-                <!-- filtro -->
-                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 w-full mb-1">
-                    <form action="/dashboard" method="get">
-                        <h5 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Filtros</h5>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <div class="mb-3">
-                                    <label for="seguidoresCheckbox"
-                                        class="flex items-center cursor-pointer text-gray-800 dark:text-white">
-                                        <input type="checkbox" id="seguidoresCheckbox" name="seguidoresCheckbox"
-                                            class="h-5 w-5 mr-2 text-primary dark:text-gray-300 border-neutral-300 rounded focus:ring-primary dark:focus:ring-gray-400">
-                                        <span class="text-sm font-medium">Seguidores</span>
-                                    </label>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nombreCheckbox"
-                                        class="flex items-center cursor-pointer text-gray-800 dark:text-white">
-                                        <input id="nombreCheckbox" type="checkbox" name="nombreCheckbox"
-                                            class="h-5 w-5 mr-2 text-primary dark:text-gray-300 border-neutral-300 rounded focus:ring-primary dark:focus:ring-gray-400">
-                                        <span class="text-sm font-medium">Usuario</span>
-                                    </label>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="fechaCheckbox"
-                                        class="flex items-center cursor-pointer text-gray-800 dark:text-white">
-                                        <input id="fechaCheckbox" type="checkbox" name="fechaCheckbox"
-                                            class="h-5 w-5 mr-2 text-primary dark:text-gray-300 border-neutral-300 rounded focus:ring-primary dark:focus:ring-gray-400">
-                                        <span class="text-sm font-medium">Fecha de Registro</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="mb-3">
-                                    <label class="block text-gray-800 dark:text-white text-sm font-medium mb-1"
-                                        for="redSocial">Redes:</label>
-                                    <select data-te-select-init id="redSocial" name="redSocial"
-                                        class="w-1/2 py-2 px-3 border border-neutral-300 rounded focus:ring-primary dark:focus:ring-gray-400">
-                                        <option value="null">Haga una selección</option>
-                                        <option value="Facebook">Facebook</option>
-                                        <option value="Instagram">Instagram</option>
-                                        <option value="x">x</option>
-                                        <option value="tic tok">tic tok</option>
-                                        <option value="Whatsapp">Whatsapp</option>
-                                        <option value="Snapchat">Snapchat</option>
-                                        <option value="Youtube">Youtube</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="block text-gray-800 dark:text-white text-sm font-medium mb-1"
-                                        for="contenido">Contenido:</label>
-                                    <select data-te-select-init id="contenido" name="contenido"
-                                        class="w-1/2 py-2 px-3 border border-neutral-300 rounded focus:ring-primary dark:focus:ring-gray-400">
-                                        <option value="null">Haga una selección</option>
-                                        <option value="Lifestyle">Lifestyle</option>
-                                        <option value="Comida">Comida</option>
-                                        <option value="Tecnologia">Tecnologia</option>
-                                        <option value="Servicio">Servicio</option>
-                                        <option value="Venta de articulos">Venta de articulos</option>
-                                        <option value="Otros">Otros</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit"
-                            class="bg-primary text-white px-6 py-3 text-sm font-medium uppercase rounded hover:bg-primary-600 focus:ring-2 focus:ring-primary dark:focus:ring-gray-400 focus:outline-none">
-                            Aplicar
-                        </button>
-
-                        <button type="submit" name="clearFiltre"
-                            class="bg-red-500 text-white px-6 py-3 text-sm font-medium uppercase rounded hover:bg-red-600 focus:ring-2 focus:ring-red-400 focus:outline-none ml-4">
-                            Limpiar filtros
-                        </button>
-
-                    </form>
-                </div>
 
                 <!-- Cuadro de busqueda -->
                 <div class="mb-6">
@@ -190,15 +172,85 @@ onMounted(() => {
                 <table class="min-w-full bg-white rounded-lg overflow-hidden">
                     <thead class="bg-gray-200">
                         <tr>
-                            <th class="px-6 py-3 text-left">Seguidores</th>
-                            <th class="px-6 py-3 text-left">Nacimiento</th>
+                            <th class="px-6 py-3 text-left">
+                                <div class="inline-flex items-center">
+                                    <span class="mr-2">Seguidores</span>
+
+                                    <div>
+                                        <button @click="reorderFollowers()" type="button"
+                                            class="text-blue-600 hover:text-blue-800 focus:outline-none">
+                                            <div v-if="reorderFollowersBool === false">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                                                </svg>
+                                            </div>
+                                            <div v-else>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="px-6 py-3 text-left">
+                                <div class="inline-flex items-center">
+                                    <span class="mr-2">Usuario</span>
+                                    <div>
+                                        <button @click="reorderUser()" type="button"
+                                            class="text-blue-600 hover:text-blue-800 focus:outline-none">
+                                            <div v-if="reorderUserBool === false">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                                                </svg>
+                                            </div>
+                                            <div v-else>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="px-6 py-3 text-left">Redes</th>
                             <th class="px-6 py-3 text-left">Post</th>
                             <th class="px-6 py-3 text-left">Stories</th>
                             <th class="px-6 py-3 text-left">Contenido</th>
                             <th class="px-6 py-3 text-left">Otros</th>
-                            <th class="px-6 py-3 text-left">Usuario</th>
-                            <th class="px-6 py-3 text-left">Redes</th>
-                            <th class="px-6 py-3 text-left">Fecha de Registro</th>
+                            <th class="px-6 py-3 text-left">Nacimiento</th>
+                            <th class="px-6 py-3 text-left">
+                                <div class="inline-flex items-center">
+                                    <span class="mr-2">Fecha de Registro</span>
+                                    <div>
+                                        <button @click="reorderCreated_at()" type="button"
+                                            class="text-blue-600 hover:text-blue-800 focus:outline-none">
+                                            <div v-if="reorderCreated_atBool === false">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                                                </svg>
+                                            </div>
+                                            <div v-else>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </th>
                             <th class="px-6 py-3 text-left">Visualizar</th>
                             <th class="px-6 py-3 text-left">Eliminar</th>
                         </tr>
@@ -206,13 +258,13 @@ onMounted(() => {
                     <tbody>
                         <tr v-for="mul in filteredResults" :key="mul.id" class="odd:bg-gray-100">
                             <td class="px-6 py-4">{{ mul.seguidores }}</td>
-                            <td class="px-6 py-4">{{ mul.nacimiento }}</td>
+                            <td class="px-6 py-4">{{ mul.usuario }}</td>
+                            <td class="px-6 py-4">{{ mul.redes }}</td>
                             <td class="px-6 py-4">{{ mul.post }}</td>
                             <td class="px-6 py-4">{{ mul.stories }}</td>
                             <td class="px-6 py-4">{{ mul.contenido }}</td>
                             <td class="px-6 py-4">{{ mul.otro }}</td>
-                            <td class="px-6 py-4">{{ mul.usuario }}</td>
-                            <td class="px-6 py-4">{{ mul.redes }}</td>
+                            <td class="px-6 py-4">{{ mul.nacimiento }}</td>
                             <td class="px-6 py-4">{{ mul.created_at }}</td>
                             <td class="px-6 py-4 text-center" @click="mostrar(mul)">
                                 <button type="button" class="text-blue-600 hover:text-blue-800 focus:outline-none"

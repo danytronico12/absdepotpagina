@@ -30,36 +30,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function (Request $request) {
 
     $multi11query = \App\Models\ddi::query();
-
-    if ($request->has('clearFiltre')) {
-        return redirect(url('/dashboard'));
-    }
-
-    //Flitros
-    if ($request->has('seguidoresCheckbox')) {
-        $multi11query->orderBy('seguidores', 'desc');
-    }
-
-    if ($request->has('fechaCheckbox')) {
-        $multi11query->orderBy('created_at', 'desc');
-    }
-
-    if ($request->has('nombreCheckbox')) {
-        $multi11query->orderBy('usuario', 'desc');
-    }
-
-    if ($request->has('redSocial')) {
-        if ($request->redSocial != 'null') {
-             $multi11query->where('redes', $request->redSocial);
-        }
-    }
-
-    if ($request->has('contenido')) {
-        if ($request->contenido != 'null') {
-             $multi11query->where('contenido', $request->contenido);
-        }
-    }
-
     $multi11 = $multi11query->get();
 
     return Inertia::render('Dashboard', ['multi11' => $multi11]);
