@@ -22,6 +22,7 @@
     "dependencies": {
         "@vue/server-renderer": "^3.3.4",
         "tailgrids": "^2.0.3",
-        "tw-elements": "^1.0.0-beta3"
+        "tw-elements": "^1.0.0-beta3",
+        "vue-tables-2": "^2.3.5"
     }
 }

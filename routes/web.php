@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\contactddiController;
 use Inertia\Inertia;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +27,12 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    $multi11 = \App\Models\ddi::orderBy('id','desc')->get();
-    $multi22 = \App\Models\contacteno::orderBy('id','desc')->get();
+Route::get('/dashboard', function (Request $request) {
 
-    return Inertia::render('Dashboard',[ 'multi11' => $multi11,'multi22' => $multi22]);
+    $multi11query = \App\Models\ddi::query();
+    $multi11 = $multi11query->get();
+
+    return Inertia::render('Dashboard', ['multi11' => $multi11]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -65,6 +67,8 @@ Route::get('/ddi', function () {
 
 Route::post('/contactenos', [contactddiController::class, 'store'])->name('contactenos');
 
-Route::post('/ddi', [contactddiController::class, 'store22'])->name('ddi');
+Route::post('/ddi', [contactddiController::class, 'store22'])->name('store22');
 
-require __DIR__.'/auth.php';
+Route::delete('/ddi', [contactddiController::class, 'destroy'])->name('ddi.destroy');
+
+require __DIR__ . '/auth.php';

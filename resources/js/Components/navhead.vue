@@ -176,7 +176,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="badge">{{$page.props.auth.user.noti}}</div>
+                                <!-- <div class="badge">{{$page.props.auth.user.noti}}</div> -->
                             </div>
                         </div>
                     </div>

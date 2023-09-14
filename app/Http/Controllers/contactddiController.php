@@ -48,31 +48,43 @@ class contactddiController extends Controller
     public function store22(Request $request)
     {
         $request->validate([
-            'seguidores' => 'required|integer|max:10000000',
-            'nacimiento' => 'required|string|max:255',
-            'postss' => 'required|string|max:10000000',
-            'stories' => 'required|string|max:10000000',
-            'contenido' => 'required|string|max:255',
-            'otro' => 'nullable|string|max:255',
-            'usuario' => 'required|string|max:255',
-            'redes' => 'required|string|max:255',
+            'seguidores' => 'nullable|integer',
+            'nacimiento' => 'nullable|date',
+            'post' => 'nullable|integer',
+            'stories' => 'nullable|integer',
+            'contenido' => 'nullable|string',
+            'otro' => 'nullable|string',
+            'usuario' => 'nullable|string|unique:ddis', // Verifica que 'usuario' sea único en la tabla 'ddis'
+            'redes' => 'nullable|string',
         ]);
         $user = ddi::create([
             'seguidores' => $request->seguidores,
             'nacimiento' => $request->nacimiento,
-            'post' => $request->postss,
+            'post' => $request->posts,
             'stories' => $request->stories,
             'contenido' => $request->contenido,
             'otro' => $request->otro,
             'usuario' => $request->usuario,
             'redes' => $request->redes,
         ]);
-
         Mail::to("kratoritoszzz@gmail.com")->send(new \App\Mail\YouMail2($user));
 
         $this->notifications($user->id);
-
         return inertia('ddi');
+    }
+
+    public function destroy(Request $request)
+    {
+
+        $ddi = ddi::find($request->idDDI);
+
+        if (!$ddi) {
+            return inertia('dashboard');
+        }
+
+        $ddi->delete();
+
+        return inertia('dashboard');
     }
     public function notifications($id)
     {
