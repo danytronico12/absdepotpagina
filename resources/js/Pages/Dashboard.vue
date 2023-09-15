@@ -61,6 +61,12 @@ const handleSearch = () => {
     }
 };
 
+const confirmDelete = (id) => {
+    if (window.confirm("¿Estás seguro de que deseas eliminar este registro?")) {
+        submit(id);
+    }
+}
+
 const submit = (id) => {
     form.idDDI = id;
 
@@ -280,7 +286,7 @@ onMounted(() => {
                                 </button>
                             </td>
                             <td class="px-6 py-4 text-center">
-                                <form @submit.prevent="submit(mul.id)">
+                                <form @submit.prevent="confirmDelete(mul.id)">
                                     <button type="submit" class="text-red-600 hover:text-red-800 focus:outline-none">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
