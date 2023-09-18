@@ -50,13 +50,17 @@ const mostrar = (userData) => {
 
 // Método para realizar la búsqueda
 const handleSearch = () => {
-    if (searchTerm.value.trim() === "") {
+    const searchTermValue = searchTerm.value.trim().toLowerCase();
+
+    if (searchTermValue === "") {
         // Si el término de búsqueda está vacío, muestra todos los participantes
         filteredResults.value = [...multi11];
     } else {
         // Filtra los resultados basados en el término de búsqueda
         filteredResults.value = multi11.filter((mul) =>
-            mul.usuario.toLowerCase().includes(searchTerm.value.toLowerCase())
+            mul.usuario.toLowerCase().includes(searchTermValue) || // Buscar en usuarios
+            mul.contenido.toLowerCase().includes(searchTermValue) || // Buscar en contenido
+            mul.redes.toLowerCase().includes(searchTermValue) // Buscar en redes
         );
     }
 };
