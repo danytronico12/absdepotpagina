@@ -162,7 +162,7 @@ onMounted(() => {
                 <!-- Cuadro de busqueda -->
                 <div class="mb-6">
                     <label for="busqueda" class="block text-gray-700 dark:text-black text-sm font-medium mb-2">
-                        Buscar por participante, redes o contenido:
+                        Buscar por participante, redes y contenido:
                     </label>
                     <div class="relative rounded-md shadow-sm">
                         <input id="busqueda" v-model="searchTerm" @input="handleSearch" type="text"
