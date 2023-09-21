@@ -5,7 +5,7 @@
         <div
             class="flex items-center justify-center   p-6  lg:justify-between">
             <div class="mr-12 hidden lg:block">
-                <span>siguenos en nuestra red sociales:</span>
+                <span>Síguenos en nuestras redes sociales:</span>
             </div>
             <!-- Social network icons container -->
             <div class="flex justify-center">
@@ -103,22 +103,17 @@
                         Menu
                     </h6>
                     <p class="mb-4">
-                        <a href="#!" class="text-lg "
+                        <a href="#barakok" class="text-lg "
                         >Acerca de nosotros</a
                         >
                     </p>
                     <p class="mb-4">
-                        <a href="#!" class="text-lg "
-                        >Servicios</a
-                        >
-                    </p>
-                    <p class="mb-4">
-                        <a href="#!" class="text-lg "
-                        >Valores</a
+                        <a href="/ddi" class="text-lg "
+                        >DDI</a
                         >
                     </p>
                     <p>
-                        <a href="#!" class="text-lg "
+                        <a href="/contactanos" class="text-lg "
                         >Contacto</a
                         >
                     </p>
