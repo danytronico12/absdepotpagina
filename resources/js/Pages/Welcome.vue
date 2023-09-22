@@ -202,7 +202,7 @@ onMounted(() =>{
             <div
                 class=" md:py-2 h-full w-full overflow-hidden">
                 <div class="flex h-full items-center justify-center py-20 px-6">
-                    <div style="background: #fff" class="grid grid-cols-1 rounded-[5px] px-2 md:p-6 p-2 text-center rounded-xs bg-white w-full md:w-3/4 text-red-600 md:px-12">
+                    <div style="background: #fff" class="mb-24 grid grid-cols-1 rounded-[5px] px-2 md:p-6 p-2 text-center rounded-xs bg-white w-full md:w-3/4 text-red-600 md:px-12">
                         <h1 class="mt-2 mb-16 lg:text-4xl font-black font-bold text-xl  md:text-3xl xl:text-6xl" style="font-weight: bold;">
                              Se parte de un equipo TOP
                         </h1>

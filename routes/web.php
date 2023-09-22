@@ -46,6 +46,10 @@ Route::get('/ddi', function () {
 
     return Inertia::render('ddi');
 });
+Route::get('/formularioddi', function () {
+
+    return Inertia::render('formularioddi');
+});
 Route::get('/servicios', function () {
 
     return Inertia::render('servicios');
