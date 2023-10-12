@@ -123,10 +123,12 @@ import footerF from "@/Components/footerF.vue";
 import InputError from '@/Components/InputError.vue';
 import { onMounted, ref } from "vue";
 import { useForm } from "@inertiajs/vue3";
-import { Ripple, Input, initTE } from "tw-elements";
+import { Ripple, Input, initTE,Collapse,
+  Dropdown,
+ } from "tw-elements";
 
 onMounted(() => {
-    initTE({ Input, Ripple });
+    initTE({ Input, Ripple,Dropdown,Collapse });
 })
 
 defineProps({
